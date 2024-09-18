@@ -27,3 +27,15 @@ if __name__ == '__main__':
     except Exception as e:
         logger.exception(e)
         raise e
+
+
+STAGE_NAME = "Model Training Stage"
+if __name__ == '__main__':
+    try:
+        logger.info(f"\n\n>>>>>>> started: {STAGE_NAME}  <<<<<<<\n\n")
+        obj = ModelTrainingPipeline()
+        obj.main()
+        logger.info(f"\n\n>>>>>>> completed: {STAGE_NAME} <<<<<<<\n\nx=======x")
+    except Exception as e:
+        logger.exception(e)
+        raise e
