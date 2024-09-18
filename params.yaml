@@ -1,11 +1,11 @@
-##key: val #WF3: dummy value, will update while preparing model
+## key: val # WF3: dummy value, will update while preparing model
 
 # base_model parameters
 AUGMENTATION: True
 IMAGE_SIZE: [224, 224, 3] # as per VGG 16 model
-BATCH_SIZE: 16
+BATCH_SIZE: 16 # small batch_size for local training
 INCLUDE_TOP: False
 EPOCHS: 1
-CLASSES: 2
+CLASSES: 2 # no of classification classes
 WEIGHTS: imagenet
 LEARNING_RATE: 0.01
