@@ -1,28 +1,27 @@
 # update from data_ingestion notebook
 from src.cnnClassifier.config.configutation import ConfigurationManager
-from src.cnnClassifier.components.model_training import Training
+from src.cnnClassifier.components.model_evaluiation_mlflow import Evaluation
 from src.cnnClassifier import logger
 
 
-STAGE_NAME = "Model Training Stage"
+STAGE_NAME = "Model Evaluation Stage"
 
 
-class ModelTrainingPipeline:
+class ModelEvaluationPipeline:
     def __init__(self):
         pass
 
     def main (self):
         config = ConfigurationManager()
-        training_config = config.get_training_config()
-        training = Training(config=training_config)
-        training.get_base_model()
-        training.train_valid_generator()
-        training.train()
+        eval_config = config.get_evaluation_config()
+        evaluation = Evaluation(eval_config)
+        evaluation.evaluation()
+        evaluation.log_into_mlflow()
 
 if __name__ == '__main__':
     try:
         logger.info(f"\n\n>>>>>>> STARTED: {STAGE_NAME}  <<<<<<<\n\n")
-        obj = ModelTrainingPipeline()
+        obj = ModelEvaluationPipeline()
         obj.main()
         logger.info(f"\n\n>>>>>>> COMPLETED: {STAGE_NAME} <<<<<<<\n\nx=======x")
     except Exception as e:
