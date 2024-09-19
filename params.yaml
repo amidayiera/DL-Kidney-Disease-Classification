@@ -3,9 +3,9 @@
 # base_model parameters
 AUGMENTATION: True
 IMAGE_SIZE: [224, 224, 3] # as per VGG 16 model
-BATCH_SIZE: 20 # small batch_size for local training
+BATCH_SIZE: 12 # small batch_size for local training
 INCLUDE_TOP: False
-EPOCHS: 1
+EPOCHS: 3
 CLASSES: 2 # no of classification classes
 WEIGHTS: imagenet
-LEARNING_RATE: 0.08
+LEARNING_RATE: 0.02

@@ -10,7 +10,7 @@ STAGE_NAME = "Data Ingestion Stage"
 if __name__ == '__main__':
     try:
         logger.info(f"\n\n>>>>>>> STARTED: {STAGE_NAME}  <<<<<<<\n\n")
-        obj = ModelEvaluationPipeline()
+        obj = DataIngestionTrainingPipeline()
         obj.main()
         logger.info(f"\n\n>>>>>>> COMPLETED: {STAGE_NAME} <<<<<<<\n\nx=======x")
     except Exception as e:
@@ -18,13 +18,12 @@ if __name__ == '__main__':
         raise e
 
 
-
 # copy from prepare_base_model pipeline file
 STAGE_NAME = "Prepare Base Model Stage"
 if __name__ == '__main__':
     try:
         logger.info(f"\n\n>>>>>>> STARTED: {STAGE_NAME}  <<<<<<<\n\n")
-        obj = ModelEvaluationPipeline()
+        obj = PrepareBaseModelTrainingPipeline()
         obj.main()
         logger.info(f"\n\n>>>>>>> COMPLETED: {STAGE_NAME} <<<<<<<\n\nx=======x")
     except Exception as e:
@@ -37,7 +36,7 @@ STAGE_NAME = "Model Training Stage"
 if __name__ == '__main__':
     try:
         logger.info(f"\n\n>>>>>>> STARTED: {STAGE_NAME}  <<<<<<<\n\n")
-        obj = ModelEvaluationPipeline()
+        obj = ModelTrainingPipeline()
         obj.main()
         logger.info(f"\n\n>>>>>>> COMPLETED: {STAGE_NAME} <<<<<<<\n\nx=======x")
     except Exception as e:
