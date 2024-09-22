@@ -1,5 +1,5 @@
 # update from base_model notebook
-from src.cnnClassifier.config.configutation import ConfigurationManager
+from src.cnnClassifier.config.configuration import ConfigurationManager
 from src.cnnClassifier.components.prepare_base_model import PrepareBaseModel
 from src.cnnClassifier import logger
 

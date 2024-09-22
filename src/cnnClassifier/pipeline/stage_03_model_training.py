@@ -1,5 +1,5 @@
 # update from data_ingestion notebook
-from src.cnnClassifier.config.configutation import ConfigurationManager
+from src.cnnClassifier.config.configuration import ConfigurationManager
 from src.cnnClassifier.components.model_training import Training
 from src.cnnClassifier import logger
 
